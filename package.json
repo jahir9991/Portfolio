@@ -10,5 +10,9 @@
     "type": "git",
     "url": "?.git"
   },
-  "author": "Jahir Alam" 
+  "author": "Jahir Alam",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.7"
+  }
 }
