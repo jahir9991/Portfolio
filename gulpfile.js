@@ -13,6 +13,8 @@ var gulp = require('gulp'),
 var coffeeSources = ['components/coffee/*.coffee'];
 var jsSources = ['components/scripts/*.js'];
 var sassSources = ['components/sass/*.scss'];
+var htmlSources = ['builds/development/*.html'];
+var jsonSources = ['builds/development/*.json'];
 
 
 //tasks.............................
@@ -48,12 +50,18 @@ gulp.task('compass', function () {
 
 });
 
-gulp.task('watch', function () {
 
-    gulp.watch(coffeeSources, ['coffee']);
-    gulp.watch(jsSources, ['js']);
-    gulp.watch(sassSources, ['compass']);
+gulp.task('html', function () {
+    gulp.src(htmlSources)
+        .pipe(connect.reload())
 });
+
+
+gulp.task('json', function () {
+    gulp.src(jsonSources)
+        .pipe(connect.reload())
+});
+
 
 gulp.task('connect', function () {
     connect.server({
@@ -69,6 +77,16 @@ gulp.task('connect', function () {
 
 });
 
+gulp.task('watch', function () {
+
+    gulp.watch(coffeeSources, ['coffee']);
+    gulp.watch(jsSources, ['js']);
+    gulp.watch(sassSources, ['compass']);
+    gulp.watch(htmlSources, ['html']);
+    gulp.watch(jsonSources, ['json']);
+
+});
+
 
 //gulp.task('browser', ['connect'], function () {
 //    gulp.src(__filename)
@@ -79,4 +97,4 @@ gulp.task('connect', function () {
 //});
 
 
-gulp.task('default', ['coffee', 'js', 'compass', 'connect', 'watch']);
+gulp.task('default', ['html', 'json', 'coffee', 'js', 'compass', 'connect', 'watch']);

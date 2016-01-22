@@ -25,6 +25,7 @@ do (window) ->
     fn elem, c
     return
 
+
   'use strict'
   # classList support for class management
   # altho to be fair, the api sucks because it won't accept multiple classes at once
