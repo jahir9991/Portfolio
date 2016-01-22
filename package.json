@@ -2,7 +2,7 @@
   "name": "myportfolio",
   "version": "0.0.1",
   "description": "jahir alam raju portfolio",
-  "main":"index.html",
+  "main":"builds/production/index.html",
   "repository": {
     "type": "git",
     "url": "https://github.com/jahir9991/Portfolio.git"
